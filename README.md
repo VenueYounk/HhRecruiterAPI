@@ -1,8 +1,34 @@
 # HeadHunter Recruiter API
 
+### What is it?
+
 This is API + parser.
 
 client_id and secret_id from dev.hh.ru are required.
+
+## Install&Run
+
+### Install
+
+```bash
+git clone https://github.com/VenueYounk/HhRecruiterAPI
+
+pip install -r requirements.txt
+```
+
+### Run
+
+#### Standart run
+
+```bash
+python3 main.py
+```
+
+#### Run with parsing data
+
+```bash
+python3 main.py -scan
+```
 
 ## Parser
 
@@ -71,7 +97,6 @@ The API response will be a JSON object containing a list of companies. Each comp
   }
 ]
 ```
-
 
 ### Get Phones
 
