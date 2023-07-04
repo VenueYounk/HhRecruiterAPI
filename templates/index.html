@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="RU-ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .endpoint {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: red solid 1px;
+        }
+
+        .GET {
+
+            width: 40%;
+            margin-right: 100px;
+        }
+
+        .parameters {
+            margin-bottom: 10px;
+        }
+
+        .parameter {
+            margin-bottom: 5px;
+        }
+
+        .parameter strong {
+            margin-right: 5px;
+            color: #333;
+        }
+
+        .response {
+            width: 50%;
+        }
+
+
+        .response pre {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .response pre code {
+            font-family: Consolas, monospace;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style="color: red;">Recruiter API</h1>
+
+    <div class="endpoint">
+        <div class="GET">
+            <h2>GET /companies</h2>
+            <h4><i>Возращает компании с актуальными вакансиями и номерами телефонов, обновляется каждую ночь</i><br></h4>
+            <div class="parameters">
+                <div class="parameter">
+                    <strong>page</strong>: (optional) Номер страницы результатов (по умолчанию: 1)
+                </div>
+                <div class="parameter">
+                    <strong>results_per_page</strong>: (optional) Количество результатов на странице (по умолчанию: 50)
+                </div>
+                <div class="parameter">
+                    <strong>sort_by</strong>: (optional) Поле для сортировки (по умолчанию: industries)
+                </div>
+                <div class="parameter">
+                    <strong>search_text</strong>: (optional) Текст для поиска по названию компании или отраслям
+                </div>
+            </div>
+        </div>
+        <div class="response">
+            <h1>Response:</h1>
+                    <pre><code>[
+  {
+    "company_name": "Компания А",
+    "industry": "Технологии",
+    "vacancies": [
+      {
+        "name": "Инженер-программист",
+        "contact_name": "Иван Иванов",
+        "phone": "123-456-7890"
+      },
+      {
+        "name": "Аналитик данных",
+        "contact_name": "Мария Сидорова",
+        "phone": "987-654-3210"
+      }
+    ]
+  },
+  {
+    "company_name": "Компания Б",
+    "industry": "IT-услуги",
+    "vacancies": [
+      {
+        "name": "Системный администратор",
+        "contact_name": "Петр Петров",
+        "phone": "555-123-4567"
+      }
+    ]
+  }
+]</code></pre>
+        </div>
+    </div>
+
+    <div class="endpoint">
+        <div class="GET">
+            <h2>GET /phones</h2>
+            <h4><i>Возращает компании с номерами телефонов, которые когда либо существовали в базе данных, ни один номер не уйдет</i><br></h4>
+
+            <div class="parameters">
+                <div class="parameter">
+                    <strong>page</strong>: (optional) Номер страницы результатов (по умолчанию: 1)
+                </div>
+                <div class="parameter">
+                    <strong>results_per_page</strong>: (optional) Количество результатов на странице (по умолчанию: 50)
+                </div>
+                <div class="parameter">
+                    <strong>sort_by</strong>: (optional) Поле для сортировки (по умолчанию: name)
+                </div>
+                <div class="parameter">
+                    <strong>search_text</strong>: (optional) Текст для поиска по названию компании или отраслям
+                </div>
+            </div>
+        </div>
+        <div class="response">
+            <h1>Ответ:</h1>
+                    <pre><code>[
+  {
+    "company_name": "Компания А",
+    "industry": "Технологии",
+    "vacancies": [
+      {
+        "name": "Инженер-программист",
+        "contact_name": "Иван Иванов",
+        "phone": "123-456-7890"
+      },
+      {
+        "name": "Аналитик данных",
+        "contact_name": "Мария Сидорова",
+        "phone": "987-654-3210"
+      }
+    ]
+  },
+  {
+    "company_name": "Компания Б",
+    "industry": "IT-услуги",
+    "vacancies": [
+      {
+        "name": "Системный администратор",
+        "contact_name": "Петр Петров",
+        "phone": "555-123-4567"
+      }
+    ]
+  }
+]</code></pre>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

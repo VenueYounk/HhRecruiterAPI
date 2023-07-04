@@ -1,0 +1,6 @@
+requests
+python_dotenv
+flask
+sqlalchemy==2.0.17
+apscheduler==3.10.1
+pytz
