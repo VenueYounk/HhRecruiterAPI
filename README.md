@@ -105,11 +105,11 @@ The API response will be a JSON object containing a list of companies. Each comp
     "industry": "Technology",
     "phones": [
       {
-        "name": "Sales Department",
+        "name": "Vasya Pupkin",
         "phone": "+1234567890"
       },
       {
-        "name": "Support Hotline",
+        "name": "Dondon Herovich",
         "phone": "+9876543210"
       }
     ]
@@ -119,7 +119,7 @@ The API response will be a JSON object containing a list of companies. Each comp
     "industry": "Finance",
     "phones": [
       {
-        "name": "Customer Service",
+        "name": "WhyAreYou Runningovich",
         "phone": "+2468135790"
       }
     ]
