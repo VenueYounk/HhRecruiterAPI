@@ -16,8 +16,7 @@ However, phone numbers are stored in a separate table so that no number is ever 
 
 ### Get Companies
 
-<pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>request</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">GET /companies
-</code></div></div></pre>
+`GET /companies`
 
 Retrieves a list of companies with options for filtering and pagination.
 
@@ -39,10 +38,44 @@ The API response will be a JSON object containing a list of companies. Each comp
   * `contact_name`: The name of the contact person for the vacancy.
   * `phone`: The phone number for the vacancy.
 
+#### Response Example
+
+```json
+[
+  {
+    "company_name":"Example Company 1",
+    "industry":"Technology",
+    "vacancies":[
+      {
+        "name":"Software Engineer",
+        "contact_name":"John Doe",
+        "phone":"+1234567890"
+      },
+      {
+        "name":"Project Manager",
+        "contact_name":"Jane Smith",
+        "phone":"+9876543210"
+      }
+    ]
+  },
+  {
+    "company_name":"Example Company 2",
+    "industry":"Finance",
+    "vacancies":[
+      {
+        "name":"Financial Analyst",
+        "contact_name":"Mark Johnson",
+        "phone":"+2468135790"
+      }
+    ]
+  }
+]
+```
+
+
 ### Get Phones
 
-<pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>request</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">GET /phones
-</code></div></div></pre>
+`GET /phones`
 
 Retrieves a list of companies with their associated phone numbers.
 
@@ -62,3 +95,35 @@ The API response will be a JSON object containing a list of companies. Each comp
 * `phones`: A list of phone numbers associated with the company. Each phone number object will have the following properties:
   * `name`: The name of the phone number (e.g., "Sales Department", "Technical Support").
   * `phone`: The phone number.
+
+#### Response Example
+
+```json
+[
+  {
+    "company_name": "Example Company 1",
+    "industry": "Technology",
+    "phones": [
+      {
+        "name": "Sales Department",
+        "phone": "+1234567890"
+      },
+      {
+        "name": "Support Hotline",
+        "phone": "+9876543210"
+      }
+    ]
+  },
+  {
+    "company_name": "Example Company 2",
+    "industry": "Finance",
+    "phones": [
+      {
+        "name": "Customer Service",
+        "phone": "+2468135790"
+      }
+    ]
+  }
+]
+
+```
