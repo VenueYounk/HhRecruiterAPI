@@ -12,6 +12,7 @@ from modules.database.models import Company, Vacancy, Phones, session
 def drop_tables():
     # session.query(Company).delete()
     session.query(Vacancy).delete()
+    session.commit()
 
 
 # Function to add data to the database
@@ -40,6 +41,7 @@ def add_data(data):
                     contact_name=vacancy_data["contact_name"],
                     phone=vacancy_data["phone"],
                     company_id=company.id,
+                    url=vacancy_data["url"],
                 )
                 company.vacancies.append(vacancy)
                 session.add(vacancy)

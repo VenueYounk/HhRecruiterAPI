@@ -7,7 +7,12 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from modules.utils.update_database import update_database
 from modules.database.models import session, Company, Phones
 
-# update_database()
+import sys
+
+
+if "-scan" in sys.argv:
+    update_database()
+    # print("This fucntion are started")
 
 
 app = Flask(__name__)
@@ -52,6 +57,7 @@ def get_companies():
                 "name": vacancy.name,
                 "contact_name": vacancy.contact_name,
                 "phone": vacancy.phone,
+                "url": vacancy.url,
             }
             for vacancy in company.vacancies
         ]
@@ -114,4 +120,4 @@ scheduler.add_job(update_database, "cron", day_of_week="*", hour=1, minute=0, se
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)

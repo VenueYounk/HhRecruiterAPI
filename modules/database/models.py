@@ -29,6 +29,7 @@ class Vacancy(Base):
     name = Column(String)
     contact_name = Column(String)
     phone = Column(String)
+    url = Column(String)
     company_id = Column(Integer, ForeignKey("companies.id"))
 
     company = relationship("Company", back_populates="vacancies")

@@ -4,7 +4,6 @@ from modules.parser.hh_api import HHAPI
 
 
 def update_database():
-    print("This fucntion are started")
     backup_db()
     parser = HHAPI()
     drop_tables()
