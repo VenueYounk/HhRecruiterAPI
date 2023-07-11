@@ -10,12 +10,15 @@ from modules.database.models import session, Company, Phones
 import sys
 
 
-if "-scan" in sys.argv:
-    update_database()
-    # print("This fucntion are started")
+# print("This fucntion are started")
 
 
 app = Flask(__name__)
+
+if "true" in app.config.get("scan"):
+    update_database()
+
+
 scheduler = BackgroundScheduler(timezone=timezone("Asia/Almaty"))
 scheduler.start()
 
