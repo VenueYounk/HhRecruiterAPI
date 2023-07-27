@@ -56,8 +56,8 @@ def get_companies():
         vacancies = [
             {
                 "name": vacancy.name,
-                "contact_name": vacancy.contact_name,
-                "phone": vacancy.phone,
+                "contact_name": vacancy.phone.name,
+                "phone": vacancy.phone.phone,
                 "url": vacancy.url,
             }
             for vacancy in company.vacancies
