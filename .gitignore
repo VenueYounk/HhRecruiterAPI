@@ -157,3 +157,5 @@ cython_debug/
 backup
 
 database.db
+.env
+.env

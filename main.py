@@ -7,7 +7,26 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from modules.utils.update_database import update_database
 from modules.database.models import session, Company, Phones
 
+from modules.database.func_db import add_data
+
+import requests
+
 import sys
+
+
+# if "-test" in sys.argv:
+#     count = 1
+#     while True:
+#         test = requests.get(
+#             f"http://85.198.90.82:8000/companies?sort_by=name&page={count}&results_per_page=300"
+#         ).json()
+#         if test != []:
+#             count += 1
+#         else:
+#             break
+#         print(count)
+#         # print(test)
+#         add_data(test)
 
 
 if "-scan" in sys.argv:
@@ -52,6 +71,8 @@ def get_companies():
     company_list = []
 
     for company in companies:
+        if company == []:
+            continue
         vacancies = [
             {
                 "name": vacancy.name,
