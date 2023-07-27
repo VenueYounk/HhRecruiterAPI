@@ -7,5 +7,5 @@ if __name__ == "__main__":
         arg1 = sys.argv[1]
         # Пример использования аргументов:
         app.config["scan"] = arg1
-
+    app.config["JSON_AS_ASCII"] = False
     app.run()

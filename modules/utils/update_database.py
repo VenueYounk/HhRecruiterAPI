@@ -6,8 +6,8 @@ from modules.parser.hh_api import HHAPI
 def update_database():
     backup_db()
     parser = HHAPI()
-    # dataset = parser.get_vacancies_from_employers(deep=1)
-    # add_data(dataset)
-    dataset = parser.get_employers_by_vacancy(deep=1)
+    dataset = parser.get_vacancies_from_employers()
+    add_data(dataset)
+    dataset = parser.get_employers_by_vacancy()
     add_data(dataset)
     # save_phones()
